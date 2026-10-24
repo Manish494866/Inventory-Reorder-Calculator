@@ -1,0 +1,174 @@
+/* Shared colors keep the industrial theme consistent. */
+:root {
+  --ink: #182b38;
+  --muted: #526471;
+  --accent: #b8490b;
+  --line: #ccd5db;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 64px 20px;
+  font-family: "Segoe UI", Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--ink);
+  background-color: #142631;
+  /* Local SVG warehouse shelves and boxes: no image downloads needed. */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='360' height='280' viewBox='0 0 360 280'%3E%3Cg fill='none' stroke='%23465c69' stroke-width='2' opacity='.42'%3E%3Cpath d='M38 44v194M322 44v194M38 132h284M38 226h284M48 138l38 82M312 138l-38 82'/%3E%3Crect x='62' y='64' width='66' height='62' rx='3'/%3E%3Cpath d='M85 64v18h20V64M74 111h18'/%3E%3Crect x='160' y='78' width='58' height='48' rx='3'/%3E%3Cpath d='M180 78v14h18V78'/%3E%3Crect x='246' y='58' width='52' height='68' rx='3'/%3E%3Cpath d='M263 58v20h18V58'/%3E%3Crect x='104' y='160' width='76' height='60' rx='3'/%3E%3Cpath d='M131 160v18h22v-18M116 204h20'/%3E%3Crect x='208' y='152' width='62' height='68' rx='3'/%3E%3Cpath d='M229 152v20h20v-20'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* A solid surface keeps the form readable over the warehouse pattern. */
+main {
+  position: relative;
+  max-width: 620px;
+  margin: 0 auto;
+  padding: 40px;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #d3dde3;
+  border-top: 6px solid #e97724;
+  border-radius: 12px;
+  box-shadow: 0 24px 64px #00000040;
+}
+
+/* Decorative package icon above the page title. */
+main::before {
+  content: "";
+  display: block;
+  width: 52px;
+  height: 52px;
+  margin-bottom: 20px;
+  border: 1px solid #efcfb6;
+  border-radius: 10px;
+  background: #fff4e9 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cg fill='none' stroke='%23a6420b' stroke-width='2' stroke-linejoin='round'%3E%3Cpath d='M8 15l16-8 16 8v19l-16 8-16-8zM8 15l16 8 16-8M24 23v19M16 11l16 8v9'/%3E%3C/g%3E%3C/svg%3E") center / 32px no-repeat;
+}
+
+h1 {
+  margin: 0 0 12px;
+  max-width: 460px;
+  font-size: clamp(1.8rem, 5vw, 2.3rem);
+  line-height: 1.15;
+  letter-spacing: -0.035em;
+}
+
+main > p:first-of-type {
+  margin: 0 0 24px;
+  color: var(--muted);
+}
+
+/* The existing formula becomes a compact reference panel. */
+main > p:nth-of-type(2) {
+  margin: 0 0 28px;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  color: #344b59;
+  background: #f3f6f8;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+form p {
+  margin: 0 0 22px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+input {
+  width: 100%;
+  min-height: 50px;
+  padding: 11px 14px;
+  border: 1px solid #91a3af;
+  border-radius: 6px;
+  font: inherit;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink);
+  background: #fbfcfd;
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+input:hover {
+  border-color: #465e6d;
+}
+
+input:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+input:focus-visible {
+  background: #ffffff;
+}
+
+button {
+  width: 100%;
+  min-height: 50px;
+  padding: 12px 16px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  font: inherit;
+  font-weight: 700;
+  color: #ffffff;
+  background: var(--accent);
+  cursor: pointer;
+}
+
+button:hover:not(:disabled) {
+  background: #923907;
+}
+
+button:disabled {
+  border-color: var(--line);
+  color: #52616d;
+  background: #e7ecef;
+  cursor: not-allowed;
+}
+
+h2 {
+  margin: 30px 0 12px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+#result {
+  margin: 0;
+  padding: 18px;
+  border: 1px solid #d8e2e8;
+  border-left: 4px solid var(--accent);
+  border-radius: 6px;
+  color: #344b59;
+  background: #f3f6f8;
+  font-size: 0.95rem;
+}
+
+/* Reduce spacing on phones while keeping comfortable input sizes. */
+@media (max-width: 480px) {
+  body {
+    padding: 24px 12px;
+  }
+
+  main {
+    padding: 24px 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  input {
+    transition: none;
+  }
+}

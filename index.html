@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Reorder Calculator</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main>
+      <h1>Inventory Reorder Calculator</h1>
+      <p>Find the stock level at which you should place a new order.</p>
+      <p>Reorder Point = (Daily Demand × Lead Time) + Safety Stock</p>
+
+      <form>
+        <p>
+          <label for="daily-demand">Average daily demand (units per day)</label>
+          <input type="number" id="daily-demand" name="daily-demand" min="0" step="any" required>
+        </p>
+        <p>
+          <label for="lead-time">Supplier lead time (days)</label>
+          <input type="number" id="lead-time" name="lead-time" min="0" step="any" required>
+        </p>
+        <p>
+          <label for="safety-stock">Safety stock (units)</label>
+          <input type="number" id="safety-stock" name="safety-stock" min="0" step="any" required>
+        </p>
+        <!-- JavaScript will enable the button when calculation is implemented. -->
+        <button type="button" disabled>Calculate</button>
+      </form>
+
+      <h2>Reorder point</h2>
+      <p id="result" aria-live="polite">The calculated result will appear here once calculation is enabled.</p>
+    </main>
+  </body>
+</html>
