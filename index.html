@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inventory Reorder Calculator</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
   </head>
   <body>
     <main>
@@ -25,12 +26,11 @@
           <label for="safety-stock">Safety stock (units)</label>
           <input type="number" id="safety-stock" name="safety-stock" min="0" step="any" required>
         </p>
-        <!-- JavaScript will enable the button when calculation is implemented. -->
-        <button type="button" disabled>Calculate</button>
+        <button type="submit">Calculate</button>
       </form>
 
       <h2>Reorder point</h2>
-      <p id="result" aria-live="polite">The calculated result will appear here once calculation is enabled.</p>
+      <p id="result" aria-live="polite">Enter your inventory details, then select Calculate.</p>
     </main>
   </body>
 </html>
